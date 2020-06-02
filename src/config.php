@@ -1,4 +1,6 @@
 <?php
+require('dbconnect.php');
+
 // Turn on/off error reporting
 error_reporting(-1);
 
