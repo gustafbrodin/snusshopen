@@ -1,6 +1,6 @@
 <?php
-	$pageTitle = "Admin";
-	$headerText = "Admin";
+	$pageTitle = "Användare";
+	$headerText = "Användare";
 ?>
 
 <?php
