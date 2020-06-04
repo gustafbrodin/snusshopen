@@ -159,7 +159,7 @@ if (empty($title)) {
 
 <div class="container">
 			  <div class="row" id="row_style">
-			    <div class="col-md-10   offset-md-2">
+			    <div class="col-md-10   offset-md-1">
 				  <h2 class="mt-5">Ny produkt</h2>
 				  <form action="" method="POST">
 				   <div class="form-group">
@@ -180,9 +180,9 @@ if (empty($title)) {
 
 <div class="row">
 		<?php foreach ($products as $key => $product) { ?>
-				<div class="col-md-2">
+				<div class="col-md-3">
 						<div class=" mb-4 ">
-								<img class="card-img-top ml-5" src="<?=htmlentities($product['img_url'])?>" style="width: 100px; height: 100px;">
+								<img class="card-img-top ml-5" src="../img/<?=htmlentities($product['img_url'])?>" style="width: 100px; height: 100px;">
 								<div class="card-body">
 										<h6 class="card-title"><?=htmlentities($product['title'])?></h5>
 										<p class="card-text" style="font-size: 0.7rem"><?=htmlentities($product['description'])?></p>
