@@ -1,10 +1,12 @@
 <?php
+
     
 	require('../src/config.php');
     include('layout/header.php');
 
 
     $pageTitle = "Logga in";
+    $pageId = "";
 
     // echo "<pre>";
     // print_r($_SESSION);
@@ -33,15 +35,19 @@
             $stmt = $dbconnect->prepare($query);
             $stmt->bindValue(':email', $email);
             $stmt->execute(); 
+
             $user = $stmt->fetch(); 
+
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int) $e->getCode());
         }
 
 
         if ($user && $password === $user['password']) {
+
             $_SESSION['email'] = $user['email'];
             header('Location: mypage.php');
+
             exit;
         } else {
 

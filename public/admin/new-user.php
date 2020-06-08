@@ -1,29 +1,30 @@
 <?php
+    // session_start();
+    // if (!isset($_SESSION['username'])) {
+    //     header('Location: login.php?mustLogin');
+    //     exit;
+    // }
 
+    $pageTitle = "Ny användare";
+    $headerText = "Ny användare";
+?>
 
-    require('../src/config.php');
+<?php
+    include('layout/admin-header.php');
 
-    include('layout/header.php');
+    $first_name  = '';
+    $last_name  = '';
+    $email     = '';
+    $password  = '';
+    $confirmPassword  = '';
+    $phone  = '';
+    $street  = '';
+    $postal_code  = '';
+    $city  = '';
+    $country  = '';
+    $error     = '';
+    $msg       = '';
 
-    $pageTitle = "Registrera dig";
-    $pageId = "";
-
-
-    // // echo $_POST
-    // echo "<pre>";
-    // echo print_r($_POST);
-    // echo "</pre>";
-
-    $first_name      = '';
-    $last_name       = '';
-    $email           = '';
-    $phone           = '';
-    $street          = '';
-    $postal_code     = '';
-    $city            = '';
-    $country         = '';
-    $error           = '';
-    $msg             = '';
     if (isset($_POST['register'])) {
         $first_name        = trim($_POST['first_name']);
         $last_name         = trim($_POST['last_name']);
@@ -37,31 +38,13 @@
         $country           = trim($_POST['country']);
 
         if (empty($first_name)) {
-            $error .= "<li>förnamnet är obligatoriskt</li>";
-        }
-        if (empty($last_name)) {
-            $error .= "<li>efternamnet är obligatoriskt</li>";
+            $error .= "<li>Användarnamnet är obligatoriskt</li>";
         }
         if (empty($email)) {
             $error .= "<li>E-post är obligatoriskt</li>";
         }
         if (empty($password)) {
             $error .= "<li>Lösenord är obligatoriskt</li>";
-        }
-        if (empty($phone)) {
-            $error .= "<li>Telefonnummer är obligatoriskt</li>";
-        }
-        if (empty($street)) {
-            $error .= "<li>Adress är obligatoriskt</li>";
-        }
-        if (empty($postal_code)) {
-            $error .= "<li>Postkod är obligatoriskt</li>";
-        }
-        if (empty($city)) {
-            $error .= "<li>Stad är obligatoriskt</li>";
-        }
-        if (empty($country)) {
-            $error .= "<li>Land är obligatoriskt</li>";
         }
         if (!empty($password) && strlen($password) < 6) {
             $error .= "<li>Lösenordet får inte vara mindre än 6 tecken lång</li>";
@@ -101,33 +84,32 @@
             }
 
             if ($result) {
-                $msg = '<div class="success_msg">Ditt konto är nu skapat</div>';
+                $msg = '<div class="success_msg">Ny användare är skapad</div>';
             } else {
-                $msg = '<div class="error_msg">Regisreringen misslyckades. Var snäll och försök igen senare!</div>';
+                $msg = '<div class="error_msg">Skapandet av användaren misslyckades. Var snäll och försök igen senare!</div>';
             }
         }
     }
 
 ?>
 
-
     <!-- Sidans/Dokumentets huvudsakliga innehåll -->
-    <div id="content">
-        <article class="border">
+    <div id="content" class="ml-5">
+        <article class="">
             <form method="POST" action="#">
                 <fieldset>
-                    <legend>Registrera dig här</legend>
+                    <legend>Skapa ny användare</legend>
                     
                     <!-- Visa errormeddelanden -->
                     <?=$msg?>
                     
                     <p>
-                        <label for="input1">Förnamn:</label> <br>
+                        <label for="input1">Förnamn</label> <br>
                         <input type="text" class="text" name="first_name" value="<?=htmlentities($first_name)?>">
                     </p>
 
                     <p>
-                        <label for="input1">Efternamn:</label> <br>
+                        <label for="input1">Efternamn</label> <br>
                         <input type="text" class="text" name="last_name" value="<?=htmlentities($last_name)?>">
                     </p>
 
@@ -138,17 +120,17 @@
 
                     <p>
                         <label for="input1">Lösenord:</label> <br>
-                        <input type="password" class="text" name="password" value="<?=htmlentities($password)?>">
+                        <input type="text" class="text" name="password" value="<?=htmlentities($password)?>">
                     </p>
 
                     <p>
                         <label for="input1">Bekräfta lösenord:</label> <br>
-                        <input type="password" class="text" name="confirmPassword" value="<?=htmlentities($password)?>">
+                        <input type="text" class="text" name="confirmPassword" value="<?=htmlentities($confirmPassword)?>">
                     </p>
 
                     <p>
                         <label for="input2">Telefonnummer:</label> <br>
-                        <input type="text" class="text" name="phone" value="<?=htmlentities($phone)?>">
+                        <input type="phone" class="text" name="phone" value="<?=htmlentities($phone)?>">
                     </p>
 
                     <p>
@@ -172,7 +154,8 @@
                     </p>
 
                     <p>
-                        <input type="submit" name="register" value="Registrera">
+                        <input type="submit" name="register" value="Skapa"> | 
+                        <a href="users.php">Tillbaka</a>
                     </p>
                 </fieldset>
             </form>
@@ -181,4 +164,6 @@
         </article>
     </div>
 
-<?php include('layout/footer.php'); ?>
+<?php
+    include('layout/admin-footer.php');
+?>
