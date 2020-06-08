@@ -1,11 +1,17 @@
 <?php
 
+    
 	require('../src/config.php');
-	
-	include('layout/header.php');
+    include('layout/header.php');
+
 
     $pageTitle = "Logga in";
     $pageId = "";
+
+    // echo "<pre>";
+    // print_r($_SESSION);
+    // echo "</pre>";
+
 
     $msg = "";
     if (isset($_GET['mustLogin'])) {
@@ -29,15 +35,19 @@
             $stmt = $dbconnect->prepare($query);
             $stmt->bindValue(':email', $email);
             $stmt->execute(); 
-            $user = $stmt->fetch(); // returns the user record if exists, else returns false
+
+            $user = $stmt->fetch(); 
+
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int) $e->getCode());
         }
 
 
         if ($user && $password === $user['password']) {
-            $_SESSION['username'] = $user['username'];
-            header('Location: get.php');
+
+            $_SESSION['email'] = $user['email'];
+            header('Location: mypage.php');
+
             exit;
         } else {
 
