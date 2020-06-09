@@ -1,16 +1,28 @@
 <?php
 	require('../src/config.php');
 	
-	include('layout/header.php');
+
+
+
+					
+					include('layout/header.php');
+
 	try {
 					
-
+					$first_name  = '';
     	$query = "SELECT * FROM products ";
     	$stmt = $dbconnect->query($query);
     	$products = $stmt->fetchall();
     }   catch (\PDOException $e) {
         throw new \PDOException($e->getMessage(), (int) $e->getCode());
-   		}
+		   }
+
+
+		   if (isset($_GET['logout'])) {
+			$msg = '<div class="success_msg">Du har loggat ut.</div>';
+		}
+
+		
 ?>
 
 

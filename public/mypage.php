@@ -7,7 +7,9 @@
     // print_r($_SESSION);
     // echo "</pre>";
 ?>
+
 <?php include('layout/header.php'); 
+
 
 $first_name  = '';
 $last_name   = '';
@@ -32,7 +34,7 @@ if (isset($_POST['update'])) {
     $city            = trim($_POST['city']);
     $country         = trim($_POST['country']);
     
-
+    
     if (empty($first_name)) {
         $error .= "<li>Användarnamnet är obligatoriskt</li>";
     }
@@ -64,11 +66,11 @@ if (isset($_POST['update'])) {
         $error .= "<li>Land är obligatoriskt</li>";
     }
 
-
-    }
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error .= "<li>Ogiltig e-post</li>";
     }
+    
+    
     
 
     if ($error) {
@@ -82,6 +84,8 @@ if (isset($_POST['update'])) {
                 SET first_name = :first_name, last_name = :last_name, password = :password, email = :email, phone = :phone, street = :street, postal_code = :postal_code, city = :city, country = :country
                 WHERE email = :email
             ";
+
+            
 
             $stmt = $dbconnect->prepare($query);
             $stmt->bindValue(':first_name', $first_name);
@@ -100,11 +104,12 @@ if (isset($_POST['update'])) {
         }
 
         if ($result) {
-            $msg = '<div class="success_msg">Användaren är uppdaterad</div>';
+            $msg = '<div class="success_msg">Dina uppgifter har uppdaterats</div>';
         } else {
             $msg = '<div class="error_msg">Uppdateringen av användaren misslyckades. Var snäll och försök igen senare!</div>';
         }
     }
+}
 
 
 try {
@@ -118,97 +123,110 @@ try {
 }   catch (\PDOException $e) {
     throw new \PDOException($e->getMessage(), (int) $e->getCode());
        }
+
+
+
+    if (isset($_POST['deleteBtn'])) {
+        try {
+                        $query = "
+                        DELETE FROM users
+                        WHERE email = :email;
+                        ";
+
+                        $stmt = $dbconnect->prepare($query);
+                        $stmt->bindValue(':email', $_POST['email']);
+                        $stmt->execute();
+                        session_destroy();
+                        header('Location: index.php?logout');
+                        exit;
+               }        catch (\PDOException $e) {
+                        throw new \PDOException($e->getMessage(), (int) $e->getCode());
+            }
+}
 ?>
 
     <!-- Sidans/Dokumentets huvudsakliga innehåll -->
     <form method="POST" action="#">
-        <div class="my-pages__content">
-        <div class="my-pages__settings">
-        <div class="my-pages__settings__col">
+
             <h2 class="my-pages__content__heading">Dina uppgifter</h2>
             <?=$msg?>
-            <div class="form-group">
+            
             <label class="form-group__label">Förnamn</label>
             <input class="form-group__field" name="first_name" type="text" value="<?=htmlentities($user['first_name'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Efternamn</label>
             <input class="form-group__field" name="last_name" type="text" value="<?=htmlentities($user['last_name'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">E-mail</label>
             <input class="form-group__field" name="email" type="text" value="<?=htmlentities($user['email'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="password" type="password">
-            </div>
+            <input class="form-group__field" name="password" type="password>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Telefon</label>
             <input class="form-group__field" name="phone" type="text" value="<?=htmlentities($user['phone'])?>">
-            </div>
+            
 
             <h2 class="my-pages__content__heading">Leveransaddress</h2>
 
-            <div class="form-group">
+            
             <label class="form-group__label">Gatuadress</label>
             <input class="form-group__field" name="street" type="text" value="<?=htmlentities($user['street'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Postnummer</label>
             <input class="form-group__field" name="postal_code" type="text" value="<?=htmlentities($user['postal_code'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Stad</label>
             <input class="form-group__field" name="city" type="text" value="<?=htmlentities($user['city'])?>">
-            </div>
+            
 
-            <div class="form-group">
+            
             <label class="form-group__label">Land</label>
             <input class="form-group__field" name="country" type="text" value="<?=htmlentities($user['country'])?>">
-            </div>
+            
 
-        </div>
+        
         <div class="my-pages__settings__col">
             <h2 class="my-pages__content__heading">Fakturaaddress</h2>
 
-            <div class="form-group">
+            
             <label class="form-group__label">Förnamn</label>
             <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            </div>
-
-            <div class="form-group">
-            <label class="form-group__label">Efternamn</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            </div>
-
-            <div class="form-group">
-            <label class="form-group__label">E-mail</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            </div>
-
-            <div class="form-group">
-            <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            </div>
-
-        </div>
-        <div class="my-pages__settings__col">
             
 
-                <div class="form-group">
+            
+            <label class="form-group__label">Efternamn</label>
+            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
+            
+
+            
+            <label class="form-group__label">E-mail</label>
+            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
+            
+
+            
+            <label class="form-group__label">Lösenord</label>
+            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
+            
+
+                <div>
                 <input type="submit" name="update" value="Uppdatera">
-                </div>
+                <input type="submit" name="deleteBtn" value="Delete">
+</div>
+
             </div>
-        </div>
-        </div>
-        </div>
     </form>
 
 <?php include('layout/footer.php'); ?>
