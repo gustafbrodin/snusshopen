@@ -1,11 +1,7 @@
 <?php
 	require('../src/config.php');
 	
-
-
-
-					
-					include('layout/header.php');
+	include('layout/header.php');
 
 	try {
 					
@@ -50,11 +46,13 @@
 																				<div class="d-flex justify-content-between align-items-center">
 																						<form action="product-page.php" method="GET">
                 			  			<input type="hidden" name="id" value="<?=$product['id']?>">
-		                      <button type="submit" class="btn btn-sm btn-outline-primary">Read more</button>
+		                      <button type="submit" class="btn btn-sm btn-outline-primary">Läs mer</button>
 		                    </form>
-																						<div class="btn-group">
-																								<a href="product-page.php"><button type="button" class="btn btn-sm btn-outline-secondary">Köp</button></a>
-																						</div>
+																						<form action="add-cart-item.php" method="POST">
+                			  			<input type="hidden" name="productId" value="<?=$product['id']?>">
+																								<input type="number" name="quantity" value="1" min="0">
+		                      <input type="submit" name="addToCart" value="Lägg till i varukorg" class="btn btn-sm btn-outline-primary">
+		                    </form>
 																				</div>
 																		</div>
 																</div>
