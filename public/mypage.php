@@ -144,7 +144,7 @@ try {
 
             <div class="form-group">
             <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="password" type="password" value="<?=htmlentities($user['password'])?>">
+            <input class="form-group__field" name="password" type="password">
             </div>
 
             <div class="form-group">
