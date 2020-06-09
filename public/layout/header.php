@@ -47,7 +47,9 @@
           }
 
           echo $aboveNav;
+          
         ?>
+        <?php include('cart.php') ?>
         </div>
         </nav>
     </header>
