@@ -78,7 +78,7 @@
                 $stmt->bindValue(':postal_code', $postal_code);
                 $stmt->bindValue(':city', $city);
                 $stmt->bindValue(':country', $country);
-                $result = $stmt->execute(); // returns true/false
+                $result = $stmt->execute();
             } catch(\PDOException $e) {
                 throw new \PDOException($e->getMessage(), (int) $e->getCode());
             }
@@ -93,14 +93,12 @@
 
 ?>
 
-    <!-- Sidans/Dokumentets huvudsakliga innehåll -->
     <div id="content" class="ml-5">
         <article class="">
             <form method="POST" action="#">
                 <fieldset>
                     <legend>Skapa ny användare</legend>
                     
-                    <!-- Visa errormeddelanden -->
                     <?=$msg?>
                     
                     <p>

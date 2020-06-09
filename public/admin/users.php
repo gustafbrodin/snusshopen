@@ -21,22 +21,18 @@
         }
     }
     
-    // Fetch all users
     try {
         $query = "
             SELECT * FROM users
         ";
     
         $stmt = $dbconnect->query($query);
-        // fetch() fetches 1 record, fetchAll() fetches alla records 
         $users = $stmt->fetchAll();
     } catch (\PDOException $e) {
         throw new \PDOException($e->getMessage(), (int) $e->getCode());
     }
 ?>
 
-
-    <!-- Sidans/Dokumentets huvudsakliga innehåll -->
     <div id="content">
         <article class="border">
             <h1>Hantera användare</h1>
