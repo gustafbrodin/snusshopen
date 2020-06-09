@@ -1,4 +1,4 @@
-<footer class="text-muted">
+<footer class="text-muted" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3);">
       <div class="container">
         <p class="float-right">
           <a href="#">Back to top</a>

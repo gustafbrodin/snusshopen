@@ -2,5 +2,5 @@
 	session_start();
 	$_SESSION = [];
 	session_destroy();
-	header('Location: login.php?logout');
+	header('Location: index.php?logout');
 	exit;

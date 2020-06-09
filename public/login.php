@@ -18,9 +18,7 @@
         $msg = '<div class="error_msg">Obs! Sidan är inloggningsskyddad. Var snäll och logga in.</div>';
     }
 
-    if (isset($_GET['logout'])) {
-        $msg = '<div class="success_msg">Du har loggat ut.</div>';
-    }
+    
 
     if (isset($_POST['doLogin'])) {
         $email    = $_POST['email'];

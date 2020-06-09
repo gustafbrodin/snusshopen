@@ -45,9 +45,6 @@
         if (empty($email)) {
             $error .= "<li>E-post är obligatoriskt</li>";
         }
-        if (empty($password)) {
-            $error .= "<li>Lösenord är obligatoriskt</li>";
-        }
         if (empty($phone)) {
             $error .= "<li>Telefonnummer är obligatoriskt</li>";
         }
