@@ -41,21 +41,21 @@
 												<?php foreach ($products as $key => $product) { ?>
 														<div class="col-md-3">
 																<div class=" mb-4 ">
-																		<img class="card-img-top" src="img/<?=htmlentities($product['img_url'])?>"style="width: 225px; height: 225px;">
+																		<img class="card-img-top" src="img/<?=($product['img_url'])?>"style="width: 225px; height: 225px;">
 																		<div class="card-body">
-																				<h5 class="card-title"><?=htmlentities($product['title'])?></h5>
-																				<p class="card-text"><?=htmlentities($product['description'])?></p>
-																				<p class="card-text"><?=htmlentities($product['price'])?> kr</p>
+																				<h5 class="card-title"><?=($product['title'])?></h5>
+																				<p class="card-text"><?=($product['description'])?></p>
+																				<p class="card-text"><?=($product['price'])?> kr</p>
 																				<div class="d-flex justify-content-between align-items-center">
 																						<form action="product-page.php" method="GET">
-                			  			<input type="hidden" name="id" value="<?=$product['id']?>">
-		                      <button type="submit" class="btn btn-sm btn-outline-primary">Läs mer</button>
-		                    </form>
+																							<input type="hidden" name="id" value="<?=$product['id']?>">
+																							<button type="submit" class="btn btn-sm btn-outline-primary">Läs mer</button>
+																						</form>
 																						<form action="add-cart-item.php" method="POST">
-                			  			<input type="hidden" name="productId" value="<?=$product['id']?>">
-																								<input type="number" name="quantity" value="1" min="0">
-		                      <input type="submit" name="addToCart" value="Lägg till i varukorg" class="btn btn-sm btn-outline-primary">
-		                    </form>
+                			  											<input type="hidden" name="productId" value="<?=$product['id']?>">
+																							<input type="number" name="quantity" value="1" min="0">
+		                      										<input type="submit" name="addToCart" value="Lägg till i varukorg" class="btn btn-sm btn-outline-primary">
+		                    										</form>
 																				</div>
 																		</div>
 																</div>

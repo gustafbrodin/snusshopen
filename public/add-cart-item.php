@@ -3,9 +3,7 @@
 	
 	include('layout/header.php');
 
-	echo "<pre>";
-	print_r($_POST);
-	echo "</pre>";
+	
 
 	if (!empty($_POST['quantity'])) {
 		$productId = (int) $_POST['productId'];
@@ -27,20 +25,29 @@
 
 		if ($product) {
 			$product = array_merge($product, ['quantity' => $quantity]);
-			echo "<pre>";
-			print_r($product);
-			echo "</pre>";
+			
 
 			$cartItem = [$productId => $product];
 
-			echo "<pre>";
-			print_r($cartItem);
-			echo "</pre>";
+			
+			if (empty($_SESSION['cartItems'])) {
+				$_SESSION['cartItems'] = $cartItem;
+			} else {
+				//$_SESSION['cartItems'] = $cartItem;
+				 if (isset($_SESSION['cartItems'][$productId])) {
+					$_SESSION['cartItems'][$productId]['quantity'] += $quantity;
+				 } else {
+					$_SESSION['cartItems'] += $cartItem;
+				 }
+			}
 
-			$_SESSION['cartItems'] = $cartItem;
+
+
+			
 		}
 	}
 
-	header('Location: index.php');
+	
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 	exit;
 ?>
