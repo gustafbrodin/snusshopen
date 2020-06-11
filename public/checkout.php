@@ -82,12 +82,90 @@
 							</button>
 						</form>
 					</td>
+          <td>
+            <form class="update-cart-form"></form>
+              <input data-id="<?=$cartId?>" type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0">
+            </form>
+          </td>
+          <td><?=$cartItem['price']?> kr</td>
 				</tr>
 				<?php } ?> 
 			</tbody>
 		</table>
 	</div>
-        
+
+	<div> 
+    <form action="create-order.php" method="POST">
+      <input type="hidden" name="cartTotalPrice" value="<?=$cartTotalSum?>">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Förnamn</label>
+          <input type="text" class="form-control" name="first_name" id="inputEmail4" placeholder="Förnamn">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Efternamn</label>
+          <input type="text" class="form-control" name="last_name"id="inputPassword4" placeholder="Efternamn">
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Adress</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Adress">
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputZip">Postnummer</label>
+          <input type="text" class="form-control" name="postal_code"id="inputZip">
+        </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">E-post</label>
+        <input type="email" class="form-control" name="email" id="inputAddress" placeholder="E-post">
+      </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPhone">Telefonnummer</label>
+        <input type="number" class="form-control" name="phone" placeholder="Telefonnummer">
+      </div>
+        <div class="form-group col-md-3">
+          <label for="inputCity">Stad</label>
+          <input type="text" class="form-control" name="city" id="inputCity">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputState">Land</label>
+          <select id="inputState" name="country" class="form-control">
+            <option selected>Välj</option>
+            <option value="SE">Sverige</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Jag har läst och godkänner villkoren
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Genomför köp</button>
+    </form>
+	</div>
+
+  <script type="text/javascript">
+    $('.update-cart-form input[name="quantity"]').on('change', function(){
+      let quantity = $(this).val();
+      let cartId = $(this).data('id');
+
+      $.ajax({
+        method: 'POST',
+        url: 'update-cart-item.php',
+        data: {quantity: quantity, cartId: cartId}
+        success: function() (
+
+        )
+      })
+    })
+  </script>
+
 <?php
 include('layout/footer.php');
 ?>
