@@ -1,6 +1,11 @@
 <?php
 	require('../src/config.php');
 
+  $cartItemCount = count($_SESSION['cartItems']);
+  $cartTotalSum = 0;
+  foreach ($_SESSION['cartItems'] as $cartId => $cartItem) {
+	$cartTotalSum += $cartItem['price'] * $cartItem['quantity'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,20 +53,20 @@
           echo $aboveNav;
           
         ?>
-        <a href="index.php">Fortsätt handla</a>
+        <a href="index.php" class="ml-5">Fortsätt handla</a>
         </div>
         </nav>
     </header>
 
-	<div class="container">
+	<div class="px-5">
 		<table class="table table-borderless">
 			<thead>
 				<tr>
 					<th style="width: 15%">Produkt</th>
 					<th style="width: 50%">Info</th>
+          <th style="width: 15%">Pris</th>
 					<th style="width: 10%">Antal</th>
-					<th style="width: 15%">Pris</th>
-					<th style="width: 10%"></th>
+					<th style="width: 30%"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -69,12 +74,18 @@
 				<tr>
 					<td ><img src="img/<?=$cartItem['img_url']?>" width="100px"></td>
 					<td class="align-middle"><?=$cartItem['title']?></td>
-					<td class="align-middle"><?=$cartItem['quantity']?> st</td>
-					<td class="align-middle"><?=$cartItem['price']?> kr</td>
-					<td class="align-middle">
+          <td><?=$cartItem['price']?> kr</td>
+					<td>
+            <form class="update-cart-form" action="update-cart-item.php" method="POST">
+              <input type="hidden" name="cartId" value="<?=$cartId?>">
+              <input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" style=" width:50px !important;}">
+            </form>
+          </td>
+          
+					<td >
 						<form action="delete-cart-item.php" method="POST">
 							<input type="hidden" name="cartId" value="<?=$cartId?>">
-							<button type="submit" class="btn">
+							<button type="submit" class="btn mt-n1">
 								<svg class="bi bi-trash" width="1.5em" height="1.5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 									<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
 									<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -82,17 +93,19 @@
 							</button>
 						</form>
 					</td>
-          <td>
-            <form class="update-cart-form"></form>
-              <input data-id="<?=$cartId?>" type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0">
-            </form>
-          </td>
-          <td><?=$cartItem['price']?> kr</td>
+          
 				</tr>
 				<?php } ?> 
+        <tr class="border-top">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Totalt: <?=$cartTotalSum?> kr</b></td>
+        </tr>
 			</tbody>
 		</table>
-	</div>
+	
 
 	<div> 
     <form action="create-order.php" method="POST">
@@ -149,23 +162,10 @@
       <button type="submit" class="btn btn-primary">Genomför köp</button>
     </form>
 	</div>
+</div>
 
-  <script type="text/javascript">
-    $('.update-cart-form input[name="quantity"]').on('change', function(){
-      let quantity = $(this).val();
-      let cartId = $(this).data('id');
-
-      $.ajax({
-        method: 'POST',
-        url: 'update-cart-item.php',
-        data: {quantity: quantity, cartId: cartId}
-        success: function() (
-
-        )
-      })
-    })
-  </script>
 
 <?php
 include('layout/footer.php');
-?>
+?>  
+
