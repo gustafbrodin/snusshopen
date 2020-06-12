@@ -109,29 +109,33 @@
 
 	<div> 
     <form action="create-order.php" method="POST">
-      <input type="hidden" name="cartTotalPrice" value="<?=$cartTotalSum?>">
+      <input type="hidden" name="totalPrice" value="<?=$cartTotalSum?>">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Förnamn</label>
-          <input type="text" class="form-control" name="first_name" id="inputEmail4" placeholder="Förnamn">
+          <input type="text" class="form-control" name="firstName" placeholder="Förnamn">
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Efternamn</label>
-          <input type="text" class="form-control" name="last_name"id="inputPassword4" placeholder="Efternamn">
+          <input type="text" class="form-control" name="lastName" placeholder="Efternamn">
         </div>
       </div>
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputAddress">Adress</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Adress">
+        <input type="text" class="form-control"  placeholder="Adress" name="street">
       </div>
       <div class="form-group col-md-6">
           <label for="inputZip">Postnummer</label>
-          <input type="text" class="form-control" name="postal_code"id="inputZip">
+          <input type="text" class="form-control" name="postalCode">
         </div>
       <div class="form-group col-md-6">
         <label for="inputAddress">E-post</label>
-        <input type="email" class="form-control" name="email" id="inputAddress" placeholder="E-post">
+        <input type="email" class="form-control" name="email"  placeholder="E-post">
+      </div> 
+      <div class="form-group col-md-6">
+      <label for="inputPassword4">Lösenord</label>
+      <input type="password" class="form-control" placeholder="Lösenord" name="password">
       </div>
       </div>
       <div class="form-row">
@@ -141,11 +145,11 @@
       </div>
         <div class="form-group col-md-3">
           <label for="inputCity">Stad</label>
-          <input type="text" class="form-control" name="city" id="inputCity">
+          <input type="text" class="form-control" name="city" >
         </div>
         <div class="form-group col-md-3">
           <label for="inputState">Land</label>
-          <select id="inputState" name="country" class="form-control">
+          <select  name="country" class="form-control">
             <option selected>Välj</option>
             <option value="SE">Sverige</option>
           </select>
@@ -159,7 +163,7 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Genomför köp</button>
+      <button type="submit" class="btn btn-primary" name="createOrderBtn">Genomför köp</button>
     </form>
 	</div>
 </div>
