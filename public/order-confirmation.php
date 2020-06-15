@@ -103,7 +103,7 @@ unset($_SESSION['cartItems']);
         </tr>
 			</tbody>
 		</table>
-	
+	</div>
 
 
 <?php
