@@ -44,18 +44,17 @@ foreach ($_SESSION['cartItems'] as $cartId => $cartItem) {
 								<div class="col-lg-2 col-sm-2 col-2">
 									<img src="img/<?=$cartItem['img_url']?>" class="cart-detail-img" >
 								</div>
-								<div class="col-lg-6 col-sm-6 col-6 cart-detail-product offset-1">
+								<div class="col-lg-5 col-sm-5 col-5 cart-detail-product offset-1">
 									<p><?=$cartItem['title']?></p>
 									<span class="price text-info"><?=$cartItem['price']?> kr</span>
 								</div>
-								<div>
-									
+								<div class="col-1">
 									<form class="update-cart-form" action="update-cart-item.php" method="POST">
 										<input type="hidden" name="cartId" value="<?=$cartId?>">
 										<input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" style=" width:50px !important;}">
 									</form>
 								</div>
-								<div>
+								<div class="col-1 offset-1">
 									<form action="delete-cart-item.php" method="POST">
 										<input type="hidden" name="cartId" value="<?=$cartId?>">
 										<button type="submit" class="btn mt-n1">

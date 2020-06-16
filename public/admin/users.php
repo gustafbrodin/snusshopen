@@ -48,7 +48,6 @@
 	            	<tr>
 	            		<th>id</th>
 	            		<th>Användarnamn</th>
-                        <th>Lösenord</th>
 	            		<th>E-post</th>
 	            		<th>Telefonnummer</th>
                         <th>Address</th>
@@ -66,7 +65,6 @@
 	            		<th><?=htmlentities($user['first_name'])?></th>
 						<th><?=htmlentities($user['last_name'])?></th>
 	            		<th><?=htmlentities($user['email'])?></th>
-                        <th><?=htmlentities($user['password'])?></th>
                         <th><?=htmlentities($user['phone'])?></th>
                         <th><?=htmlentities($user['street'])?></th>
                         <th><?=htmlentities($user['postal_code'])?></th>
