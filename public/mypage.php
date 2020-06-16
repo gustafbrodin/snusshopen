@@ -167,7 +167,7 @@ try {
 
             
             <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="password" type="password>
+            <input class="form-group__field" name="password" type="password">
             
 
             
@@ -197,36 +197,12 @@ try {
             <input class="form-group__field" name="country" type="text" value="<?=htmlentities($user['country'])?>">
             
 
-        
-        <div class="my-pages__settings__col">
-            <h2 class="my-pages__content__heading">Fakturaaddress</h2>
-
-            
-            <label class="form-group__label">Förnamn</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            
-
-            
-            <label class="form-group__label">Efternamn</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            
-
-            
-            <label class="form-group__label">E-mail</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            
-
-            
-            <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="" type="text" value="<?=htmlentities($user[''])?>">
-            
-
-                <div>
+            <div>
                 <input type="submit" name="update" value="Uppdatera">
                 <input type="submit" name="deleteBtn" value="Delete">
-</div>
-
             </div>
+
+        </div>
     </form>
 
 <?php include('layout/footer.php'); ?>
