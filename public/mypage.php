@@ -208,9 +208,12 @@ try {
 
         
 
-    <form method="POST" action="#">
+    <form method="POST" action="#" class="container-fluid">
+    <div class="row d-flex justify-content-center">
 
-            <h2 class="my-pages__content__heading">Dina uppgifter</h2>
+            <div class="col-2 m-5">
+            
+            <h2 class="my-pages__content__heading car">Dina uppgifter</h2>
             <?=$msg?>
             
             <label class="form-group__label">Förnamn</label>
@@ -235,8 +238,9 @@ try {
             
             <label class="form-group__label">Telefon</label>
             <input class="form-group__field" name="phone" type="text" value="<?=htmlentities($user['phone'])?>">
+            </div>
             
-
+            <div class="col-2 m-5">
             <h2 class="my-pages__content__heading">Leveransaddress</h2>
 
             
@@ -257,14 +261,15 @@ try {
             
             <label class="form-group__label">Land</label>
             <input class="form-group__field" name="country" type="text" value="<?=htmlentities($user['country'])?>">
-            
-
-            <div>
-                <input type="submit" name="update" value="Uppdatera">
-                <input type="submit" name="deleteBtn" value="Delete">
             </div>
-
-        </div>
+            </div>
+            </div>
+            <div class="d-flex justify-content-center p-5">
+                <input class="btn btn-primary m-2" type="submit" name="update" value="Uppdatera">
+                <input class="btn btn-primary m-2" type="submit" name="deleteBtn" value="Delete">
+            </div>
+            
+        
     </form>
 
 <?php include('layout/footer.php'); ?>

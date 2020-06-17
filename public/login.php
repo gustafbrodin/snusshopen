@@ -54,9 +54,9 @@
     }
 ?>
 
-    <div id="content">
+    <div id="content ">
         <article class="border">
-            <form method="POST" action="#">
+            <form method="POST" action="#" class="row d-flex justify-content-center">
                 <fieldset>
                     <legend>Logga in</legend>
                     
@@ -74,7 +74,7 @@
                     </p>
 
                     <p>
-                        <input type="submit" name="doLogin" value="Login">
+                        <input type="submit" name="doLogin" value="Login" class="btn btn-primary">
                     </p>
                 </fieldset>
             </form>

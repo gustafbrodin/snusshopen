@@ -108,71 +108,64 @@
 ?>
 
 
-    <!-- Sidans/Dokumentets huvudsakliga innehåll -->
     <div id="content">
-        <article class="border">
-            <form method="POST" action="#">
-                <fieldset>
-                    <legend>Registrera dig här</legend>
-                    
-                    <!-- Visa errormeddelanden -->
-                    <?=$msg?>
-                    
-                    <p>
-                        <label for="input1">Förnamn:</label> <br>
-                        <input type="text" class="text" name="first_name" value="<?=htmlentities($first_name)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Efternamn:</label> <br>
-                        <input type="text" class="text" name="last_name" value="<?=htmlentities($last_name)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">E-post:</label> <br>
-                        <input type="text" class="text" name="email" value="<?=htmlentities($email)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Lösenord:</label> <br>
-                        <input type="password" class="text" name="password" value="<?=htmlentities($password)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Bekräfta lösenord:</label> <br>
-                        <input type="password" class="text" name="confirmPassword" value="<?=htmlentities($password)?>">
-                    </p>
-
-                    <p>
-                        <label for="input2">Telefonnummer:</label> <br>
-                        <input type="text" class="text" name="phone" value="<?=htmlentities($phone)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Gata:</label> <br>
-                        <input type="text" class="text" name="street" value="<?=htmlentities($street)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Postnummer:</label> <br>
-                        <input type="text" class="text" name="postal_code" value="<?=htmlentities($postal_code)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Stad:</label> <br>
-                        <input type="text" class="text" name="city" value="<?=htmlentities($city)?>">
-                    </p>
-
-                    <p>
-                        <label for="input1">Land:</label> <br>
-                        <input type="text" class="text" name="country" value="<?=htmlentities($country)?>">
-                    </p>
-
-                    <p>
-                        <input type="submit" name="register" value="Registrera">
-                    </p>
-                </fieldset>
-            </form>
+    <legend class="d-flex justify-content-center">Registera dig här</legend>
+        <article class="justify-content-center m-5 p-3">
+            <form method="POST">
+            <?=$msg?>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Förnamn</label>
+          <input type="text" class="form-control" name="first_name" placeholder="Förnamn" value="<?=htmlentities($first_name)?>">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Efternamn</label>
+          <input type="text" class="form-control" name="last_name" placeholder="Efternamn" value="<?=htmlentities($last_name)?>">
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Adress</label>
+        <input type="text" class="form-control"  placeholder="Adress" name="street" value="<?=htmlentities($street)?>">
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputZip">Postnummer</label>
+          <input type="text" class="form-control" name="postal_code" value="<?=htmlentities($postal_code)?>">
+        </div>
+      <div class="form-group col-md-12">
+        <label for="inputAddress">E-post</label>
+        <input type="email" class="form-control" name="email"  placeholder="E-post" value="<?=htmlentities($email)?>">
+      </div> 
+      <div class="form-group col-md-6">
+      <label for="inputPassword4">Lösenord</label>
+      <input type="password" class="form-control" placeholder="Lösenord" name="password" value="<?=htmlentities($password)?>">
+      </div>
+      <div class="form-group col-md-6">
+      <label for="inputPassword4">Bekräfta Lösenord</label>
+      <input type="password" class="form-control" placeholder="Lösenord" name="confirmPassword" value="<?=htmlentities($password)?>">
+      </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPhone">Telefonnummer</label>
+        <input type="tel" class="form-control" name="phone" placeholder="Telefonnummer" value="<?=htmlentities($phone)?>">
+      </div>
+        <div class="form-group col-md-3">
+          <label for="inputCity">Stad</label>
+          <input type="text" class="form-control" name="city" value="<?=htmlentities($city)?>">
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputState">Land</label>
+          <select  name="country" class="form-control" value="<?=htmlentities($country)?>">
+            <option selected>Välj</option>
+            <option value="SE">Sverige</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+      </div>
+      <input type="submit" name="register" value="Registrera" class="btn btn-primary">
+    </form>
         
             <hr>
         </article>
