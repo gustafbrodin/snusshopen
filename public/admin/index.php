@@ -17,7 +17,7 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
-              <h3 class="card-text text-center">Produkter</h3>
+              <h3 class="card-text text-center" style="font-family: 'Dosis', sans-serif;">Produkter</h3>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="btn-group">
                   <a href="products.php"><button type="button" class="btn btn-sm btn-outline-secondary">Visa</button></a>
@@ -29,7 +29,7 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
-              <h3 class="card-text text-center">Användare</h3>
+              <h3 class="card-text text-center" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); color: white;">Användare</h3>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="btn-group">
                   <a href="users.php"><button type="button" class="btn btn-sm btn-outline-secondary">Visa</button></a>
