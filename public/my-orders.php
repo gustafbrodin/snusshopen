@@ -123,7 +123,8 @@
 			</tbody>
 		</table>
 			</tbody>
-		</table>
+        </table>
+    </div>
 <?php
 include('layout/footer.php');
 ?>  

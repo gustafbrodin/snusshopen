@@ -17,7 +17,7 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
-              <h3 class="card-text text-center" style="font-family: 'Dosis', sans-serif;">Produkter</h3>
+              <h3 class="card-text text-center" >Produkter</h3>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="btn-group">
                   <a href="products.php"><button type="button" class="btn btn-sm btn-outline-secondary">Visa</button></a>
