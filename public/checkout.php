@@ -83,7 +83,7 @@ if (empty($_SESSION['cartItems'])) {
 					<td>
             <form class="update-cart-form" action="update-cart-item.php" method="POST">
               <input type="hidden" name="cartId" value="<?=$cartId?>">
-              <input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" style=" width:50px !important;}">
+              <input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" class="quantity">
             </form>
           </td>
           

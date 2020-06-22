@@ -211,55 +211,40 @@ try {
         
 
     <form method="POST" action="#" class="container-fluid">
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-around">
 
-            <div class="col-2 m-5">
+            <div class="col-3 mt-5 form">
             
-            <h2 class="my-pages__content__heading car">Dina uppgifter</h2>
+            <h2 class="mb-4">Dina uppgifter</h2>
             <?=$msg?>
             
             <label class="form-group__label">Förnamn</label>
-            <input class="form-group__field" name="first_name" type="text" value="<?=htmlentities($user['first_name'])?>">
-            
-
+            <input class="form-group__field" name="first_name" type="text" value="<?=htmlentities($user['first_name'])?>"><br>
             
             <label class="form-group__label">Efternamn</label>
-            <input class="form-group__field" name="last_name" type="text" value="<?=htmlentities($user['last_name'])?>">
-            
-
+            <input class="form-group__field" name="last_name" type="text" value="<?=htmlentities($user['last_name'])?>"><br>
             
             <label class="form-group__label">E-mail</label>
-            <input class="form-group__field" name="email" type="text" value="<?=htmlentities($user['email'])?>">
-            
-
+            <input class="form-group__field" name="email" type="text" value="<?=htmlentities($user['email'])?>"><br>
             
             <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="password" type="password">
-            
-
+            <input class="form-group__field" name="password" type="password"><br>
             
             <label class="form-group__label ">Telefon</label>
             <input class="form-group__field telefonnummer" name="phone" type="number" value="<?=htmlentities($user['phone'])?>">
             </div>
             
-            <div class="col-2 m-5">
-            <h2 class="my-pages__content__heading">Leveransaddress</h2>
+            <div class="col-3 mt-5 form ">
+            <h2 class="mb-4">Leveransaddress</h2>
 
-            
             <label class="form-group__label">Gatuadress</label>
-            <input class="form-group__field" name="street" type="text" value="<?=htmlentities($user['street'])?>">
-            
-
+            <input class="form-group__field" name="street" type="text" value="<?=htmlentities($user['street'])?>"><br>
             
             <label class="form-group__label">Postnummer</label>
-            <input class="form-group__field" name="postal_code" type="text" value="<?=htmlentities($user['postal_code'])?>">
-            
-
+            <input class="form-group__field" name="postal_code" type="text" value="<?=htmlentities($user['postal_code'])?>"><br>
             
             <label class="form-group__label">Stad</label>
-            <input class="form-group__field" name="city" type="text" value="<?=htmlentities($user['city'])?>">
-            
-
+            <input class="form-group__field" name="city" type="text" value="<?=htmlentities($user['city'])?>"><br>
             
             <label class="form-group__label">Land</label>
             <input class="form-group__field" name="country" type="text" value="<?=htmlentities($user['country'])?>">
@@ -270,8 +255,7 @@ try {
                 <input class="btn btn-primary m-2" type="submit" name="update" value="Uppdatera">
                 <input class="btn btn-primary m-2" type="submit" name="deleteBtn" value="Delete">
             </div>
-            
-        
+
     </form>
 
 <?php include('layout/footer.php'); ?>

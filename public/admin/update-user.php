@@ -1,7 +1,7 @@
 <?php
     
     $pageTitle = "Uppdatera användare";
-    $headerText = "Användare";
+    $headerText = "Uppdatera användare";
 
     // echo "<pre>";
     // print_r($_SESSION);
@@ -63,7 +63,7 @@ if (isset($_POST['update'])) {
         $error .= "<li>Land är obligatoriskt</li>";
     }
 
-    }
+    
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error .= "<li>Ogiltig e-post</li>";
     }
@@ -101,7 +101,7 @@ if (isset($_POST['update'])) {
         } else {
             $msg = '<div class="error_msg">Uppdateringen av användaren misslyckades. Var snäll och försök igen senare!</div>';
         }
-    }
+    }}
 
 try {
     $query = "
@@ -119,11 +119,12 @@ try {
 
 ?>
 
-<div id="content">
-    <article class="border">
+<div class="row d-flex justify-content-center">
+   
+    <div class="col-3 mt-5 form offset-1">
         <form method="POST" action="#">
             <fieldset>
-                <legend>Uppdatera användare</legend>
+                
                 
                 <?=$msg?>
                 
@@ -151,7 +152,8 @@ try {
                         <label for="input2">Telefonnummer:</label> <br>
                         <input type="phone" class="text" name="phone" value="<?=htmlentities($user['phone'])?>">
                     </p>
-
+                    </div>
+                    <div class="col-3 mt-5 form ">
                     <p>
                         <label for="input1">Gata:</label> <br>
                         <input type="text" class="text" name="street" value="<?=htmlentities($user['street'])?>">
@@ -180,7 +182,7 @@ try {
         </form>
     
         <hr>
-    </article>
+    </div>
 </div>
 
 <?php include('layout/admin-footer.php'); ?>

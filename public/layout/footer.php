@@ -1,11 +1,26 @@
-<footer class="text-muted" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3);">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Back to top</a>
-        </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
-      </div>
+<footer class="text-muted" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); height: 200px;">
+      <nav class="navbar navbar-dark box-shadow" style="color: white;">
+        <div class="container d-flex justify-content-between pt-4">
+          <div>
+            <p><a href="index.php">Hem</a></p>
+            <p><a href="login.php" >Logga in</a></p>
+            <p><a href="register.php" >Registrera dig</a></p>
+            <p><a href="admin/index.php">Admin</a></p>
+          </div>
+          <div>
+            <p>Besöksadress</p>
+            <p>Kontorsgatan 12</p>
+            <p>118 45 Stockholm</p>
+            <p>Sverige</p>
+          </div>
+          <div>
+            <p>Kontakta oss</p>
+            <p>kontakt@snusshopen.se</p>
+            <p>+46 707 836 946</p>
+            <p>Chatta med oss här</p>
+          </div>
+        </div>
+        </nav>
     </footer>
 
 

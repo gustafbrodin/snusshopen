@@ -38,16 +38,17 @@
             <h1>Hantera användare</h1>
 
             <form action="new-user.php" method="GET">
-            	<input type="submit" value="Ny användare">
+            	<input type="submit" value="Ny användare" class="btn btn-sm btn-success">
             </form>
 
             <br>
             
-            <table id="users-tbl">
+            <table class="table table-striped"">
             	<thead>
 	            	<tr>
 	            		<th>id</th>
-	            		<th>Användarnamn</th>
+                        <th>Förnamn</th>
+                        <th>Efternamn</th>
 	            		<th>E-post</th>
 	            		<th>Telefonnummer</th>
                         <th>Address</th>
@@ -73,12 +74,12 @@
 	            		<th>	            			
 	            			<form action="update-user.php?" method="GET" style="float:left;">
 	            				<input type="hidden" name="id" value="<?=$user['id']?>">
-				            	<input type="submit" value="Updatera">
+				            	<input type="submit" value="Updatera" class="btn btn-sm btn-warning mr-1">
 				            </form>
 
 	            			<form action="" method="POST" style="float:left;">
 	            				<input type="hidden" name="id" value="<?=$user['id']?>">
-	            				<input type="submit" name="deleteUserBtn" value="Radera">
+	            				<input type="submit" name="deleteUserBtn" value="Radera" class="btn btn-sm btn-danger">
 	            			</form>
 	            		</th>
 	            	</tr>

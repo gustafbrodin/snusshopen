@@ -51,7 +51,7 @@ foreach ($_SESSION['cartItems'] as $cartId => $cartItem) {
 								<div class="col-1">
 									<form class="update-cart-form" action="update-cart-item.php" method="POST">
 										<input type="hidden" name="cartId" value="<?=$cartId?>">
-										<input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" style=" width:50px !important;}">
+										<input type="number" name="quantity" value="<?=$cartItem['quantity']?>" min="0" class="quantity">
 									</form>
 								</div>
 								<div class="col-1 offset-1">
