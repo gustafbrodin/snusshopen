@@ -6,6 +6,11 @@
   foreach ($_SESSION['cartItems'] as $cartId => $cartItem) {
 	$cartTotalSum += $cartItem['price'] * $cartItem['quantity'];
 }
+
+if (empty($_SESSION['cartItems'])) {
+  header('Location: index.php');
+  exit;
+}
 ?>
 
 <!DOCTYPE html>

@@ -2,17 +2,10 @@
 
     require('../src/config.php');
     
-
-    //  echo "<pre>";
-    // print_r($_GET);
-    // echo "</pre>";
-    // exit;
-
-
- 
-
-
-// lista över singel beställ
+    if (!isset($_SESSION['email'])) {
+	    header("location: login.php?mustLogin");
+	    }
+    
 try {
 
     $query = "

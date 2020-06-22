@@ -1,7 +1,9 @@
 <?php
     require('../src/config.php');
     
-
+    if (!isset($_SESSION['email'])) {
+	    header("location: login.php?mustLogin");
+	    }
 
         
     try {

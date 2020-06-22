@@ -148,7 +148,7 @@
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputPhone">Telefonnummer</label>
-        <input type="tel" class="form-control" name="phone" placeholder="Telefonnummer" value="<?=htmlentities($phone)?>">
+        <input type="number" class="form-control telefonnummer" name="phone" placeholder="Telefonnummer" value="<?=htmlentities($phone)?>">
       </div>
         <div class="form-group col-md-3">
           <label for="inputCity">Stad</label>

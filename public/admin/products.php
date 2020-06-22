@@ -32,7 +32,7 @@
 					$img_url = trim($_POST['img_url']);
 
 		if (empty($title)) {
-						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">Title can not be empty
+						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">Produktnamn får inte vara tomt
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 				</button>
@@ -40,7 +40,7 @@
 		}
 
 		if (empty($description)) {
-						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">Blog post can not be empty
+						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">Beskrivnginen får inte vara tom
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 				</button>
@@ -48,7 +48,7 @@
 		}
 
 		if (empty($price)) {
-						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">price can not be empty
+						$error .= '<div class="alert alert-danger mb-2 p-1" role="alert">Pris får inte vara tomt
 											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 					</button>
@@ -63,8 +63,8 @@
 
 						try {
 										$query = "
-										INSERT INTO products (title, description, price, img_url)
-										VALUES (:title, :description, :price, :img_url);
+										INSERT INTO products (title, description, price, img_url, background_img)
+										VALUES (:title, :description, :price, :img_url, :img_url);
 										"; 
 
 										$stmt = $dbconnect->prepare($query);
@@ -77,7 +77,7 @@
 										throw new \PDOException($e->getMessage(), (int) $e->getCode()); 
 						} 
 						if ($result) {
-						$msg = '<p class="alert alert-success">Your blog post was successfully uploaded
+						$msg = '<p class="alert alert-success">Produkten har skapats
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 						</button>

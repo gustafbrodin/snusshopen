@@ -70,3 +70,14 @@ input[type="number"] {
   border:10px solid transparent;
   border-bottom-color:#fff; 
 }
+
+input.telefonnummer::-webkit-outer-spin-button,
+input.telefonnummer::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input.telefonnummer[type=number] {
+  -moz-appearance: textfield;
+}
+

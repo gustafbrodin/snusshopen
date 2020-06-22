@@ -3,10 +3,12 @@
     $pageTitle = "Mypage";
     $pageId = "me";
 
-  
+  if (!isset($_SESSION['email'])) {
+	    header("location: login.php?mustLogin");
+	    }
 ?>
 
-<?php //include('layout/header.php'); 
+<?php 
 
 
 $first_name  = '';
@@ -236,8 +238,8 @@ try {
             
 
             
-            <label class="form-group__label">Telefon</label>
-            <input class="form-group__field" name="phone" type="text" value="<?=htmlentities($user['phone'])?>">
+            <label class="form-group__label ">Telefon</label>
+            <input class="form-group__field telefonnummer" name="phone" type="number" value="<?=htmlentities($user['phone'])?>">
             </div>
             
             <div class="col-2 m-5">

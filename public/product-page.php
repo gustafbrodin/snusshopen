@@ -25,7 +25,7 @@
 	               <section class="mb-3 font-weight-light"><?=htmlentities($products['price'])?> kr</section>
 																<button class="btn btn-sm btn-outline-primary">Lägg i varukorg</button><br><br>
 	               <form action="index.php">
-	               	<button class="btn btn-sm btn-outline-primary">Back</button>
+	               	<button class="btn btn-sm btn-outline-primary">Tillbaka</button>
 	               </form>
 	             </div><br>
 	         </div>
