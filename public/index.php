@@ -49,8 +49,8 @@
 															</form>
 															<form action="add-cart-item.php" method="POST">
           											<input type="hidden" name="productId" value="<?=$product['id']?>">
-																<input type="number" name="quantity" value="1" min="0" class="quantity">
-		        										<input type="submit" name="addToCart" value="Köp" class="btn btn-info btn-sm">
+																<input type="number" name="quantity" value="1" min="0" class="quantity" style="position:relative; z-index:999; top:2px;">
+		        										<input type="submit" name="addToCart" value="Köp" class="btn btn-info btn-sm" style="position:relative; z-index:999;">
 		      										</form>
 													</div>
 											</div>

@@ -53,34 +53,21 @@
         }
     }
 ?>
-
-    <div id="content ">
-        <article class="border">
-            <form method="POST" action="#" class="row d-flex justify-content-center">
-                <fieldset>
-                    <legend>Logga in</legend>
-                    
-                    <!-- Visa errormeddelanden -->
-                    <?=$msg?>
-                    
-                    <p>
-                        <label for="input1">E-post:</label> <br>
-                        <input type="text" class="text" name="email">
-                    </p>
-
-                    <p>
-                        <label for="input2">Lösenord:</label> <br>
-                        <input type="password" class="text" name="password">
-                    </p>
-
-                    <p>
-                        <input type="submit" name="doLogin" value="Login" class="btn btn-primary">
-                    </p>
-                </fieldset>
-            </form>
-        
-            <hr>
-        </article>
-    </div>
+<div class="d-flex justify-content-center m-3">
+<form class="form-signin">
+  <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+  <label for="inputPassword" class="sr-only">Lösenord</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Kom ihåg mig
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
+</form>
+</div>
 
 <?php include('layout/footer.php'); ?>

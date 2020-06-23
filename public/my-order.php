@@ -151,6 +151,7 @@ try {
 		</table>
 
         <a href="my-orders.php" class="btn btn-primary">Tillbaka</a>
+        </div>
 <?php
 include('layout/footer.php');
 ?>  
