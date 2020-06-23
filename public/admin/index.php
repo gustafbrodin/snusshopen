@@ -41,7 +41,7 @@
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
-              <h3 class="card-text text-center">Ordrar</h3>
+              <h3 class="card-text text-center" style="font-family: 'Oswald', sans-serif;">Ordrar</h3>
               <div class="d-flex justify-content-center align-items-center">
                 <div class="btn-group">
                   <a href="orders.php"><button type="button" class="btn btn-sm btn-outline-secondary">Visa</button></a>

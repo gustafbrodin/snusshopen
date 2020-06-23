@@ -43,7 +43,7 @@
 
             <br>
             
-            <table class="table table-striped"">
+            <table class="table table-striped">
             	<thead>
 	            	<tr>
 	            		<th>id</th>
