@@ -121,8 +121,6 @@ try {
     </nav>
 
 
-    
-
 	<div class="px-5">
 		<table class="table table-borderless table-hover">
 			<thead>
@@ -152,7 +150,7 @@ try {
 			</tbody>
 		</table>
 
-        <a href="my-orders.php">Tillbaka</a>
+        <a href="my-orders.php" class="btn btn-primary">Tillbaka</a>
 <?php
 include('layout/footer.php');
 ?>  

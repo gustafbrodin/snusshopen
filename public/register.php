@@ -132,7 +132,7 @@
           <label for="inputZip">Postnummer</label>
           <input type="text" class="form-control" name="postal_code" value="<?=htmlentities($postal_code)?>">
         </div>
-      <div class="form-group col-md-12">
+      <div class="form-group col-md-6">
         <label for="inputAddress">E-post</label>
         <input type="email" class="form-control" name="email"  placeholder="E-post" value="<?=htmlentities($email)?>">
       </div> 

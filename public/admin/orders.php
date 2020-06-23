@@ -23,11 +23,11 @@ try {
 
 
     <br>
-    <h1>Hantera ordrar!</h1>
+    
     <br>
 
 	<div class="px-5">
-		<table class="table table-borderless table-hover">
+		<table class="table table-borderless table-striped">
 			<thead>
 				<tr>
 					<th style="width: 15%">Order Id</th>

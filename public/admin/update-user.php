@@ -171,12 +171,14 @@ try {
 
                     <p>
                         <label for="input1">Land:</label> <br>
-                        <input type="text" class="text" name="country" value="<?=htmlentities($user['country'])?>">
+                        <select  name="country" class="custom-select col-6" value="<?=htmlentities($country)?>">
+                            <option value="SE">Sverige</option>
+                        </select>
                     </p>
 
                 <p>
-                    <input type="submit" name="update" value="Uppdatera"> | 
-                    <a href="users.php">Tillbaka</a>
+                    <input type="submit" name="update" value="Uppdatera" class="btn btn-warning"> 
+                    <a href="users.php" class="btn btn-outline-primary">Tillbaka</a>
                 </p>
             </fieldset>
         </form>

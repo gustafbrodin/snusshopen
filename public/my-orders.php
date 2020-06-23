@@ -99,11 +99,12 @@
 	<div class="px-5">
 		<table class="table table-borderless table-hover">
 			<thead>
-            <table class="table table-borderless">
+            <table class="table table-borderless table-striped">
 			<thead>
 				<tr>
                     <th style="width: 15%">Ordernummer</th>
 					<th style="width: 10%">Summa</th>
+                    <th style="width: 10%">Orderdatum</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -113,6 +114,7 @@
 				<tr>
                     <td><a href="my-order.php?id=<?=$order['id']?>">#<?=$order['id']?></a></td>
                     <td><?=$order['total_price']?> kr</td>
+                    <td><?=$order['created_at']?></td>
 
                    
           
