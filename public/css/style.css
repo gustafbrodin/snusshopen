@@ -4,6 +4,12 @@ header a, footer a {
 	color:white!important;
 	text-decoration: none;
 }
+footer {
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top:250px;
+}
 
 footer p {
 	margin-bottom: 10px;
@@ -97,6 +103,7 @@ input.telefonnummer[type=number] {
 
 .quantity {
 	width:50px;
+	margin-top: 3px;
 }
 
 	.form input{  

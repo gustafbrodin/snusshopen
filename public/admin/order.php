@@ -118,7 +118,9 @@ try {
 		</table>
 
         <a href="orders.php">Tillbaka</a>
+
+                </div>
 <?php
-include('../layout/footer.php');
+include('layout/admin-footer.php');
 ?>  
 

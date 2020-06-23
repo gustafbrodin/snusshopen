@@ -2,10 +2,12 @@
       <nav class="navbar navbar-dark box-shadow" style="color: white;">
         <div class="container d-flex justify-content-between pt-4">
           <div>
-            <p><a href="index.php">Hem</a></p>
-            <p><a href="login.php" >Logga in</a></p>
-            <p><a href="register.php" >Registrera dig</a></p>
-            <p><a href="admin/index.php">Admin</a></p>
+            <p><a href="index.php">Admin</a></p>
+            <p><a href="products.php" >Hantera Produkter</a></p>
+            <p><a href="users.php" >Hantera Användare</a></p>
+            <p><a href="orders.php">Hantera Ordrar</a></p>
+            <p><a href="../index.php">Snusshoppen</a></p>
+           
           </div>
           <div>
             <p>Besöksadress</p>

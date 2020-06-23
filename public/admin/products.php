@@ -164,7 +164,8 @@ if (empty($title)) {
 				  <form action="" method="POST">
 				   <div class="form-group">
 				      <input type="text" class="form-control col-md-5" name="title" placeholder="Produktnamn">
-				    </div>
+					</div>
+		   			
 				    <textarea class="form-control" cols="30" rows="5" name="description" placeholder="Beskrivning av produkten"></textarea><br>
 				    <div class="form-group inline-block">
 									<input type="text" class="form-control col-md-2" style="display: inline-block;" name="price" placeholder="Pris" >
@@ -172,10 +173,12 @@ if (empty($title)) {
 									<!-- <input type="file" class="form-control col-md-9" style="display: inline-block;" name="img_url" placeholder="Bild-URL"> -->
 				    </div>
 				    <div class="form-group mb-4">
-			          <input type="submit" class="btn btn-primary" name="upload" id="submit" value="Lägg till ny produkt">
+			          <input type="submit" class="btn btn-sm btn-success" name="upload" id="submit" value="Lägg till ny produkt">
 		   	        </div>
 				  </form>
 						<?=$msg?>
+				</div>
+				</div>
 				</div>
 
 <div class="row">
@@ -184,7 +187,7 @@ if (empty($title)) {
 						<div class=" mb-4 ">
 								<img class="card-img-top ml-5" src="../img/<?=htmlentities($product['img_url'])?>" style="width: 100px; height: 100px;">
 								<div class="card-body">
-										<h6 class="card-title"><?=htmlentities($product['title'])?></h5>
+										<h6 class="card-title"><?=htmlentities($product['title'])?></h6>
 										<p class="card-text" style="font-size: 0.7rem"><?=htmlentities($product['description'])?></p>
 										<p class="card-text" style="font-size: 0.7rem"><?=htmlentities($product['price'])?> kr</p>
 										<div class="d-flex justify-content-between align-items-center">
@@ -250,7 +253,6 @@ if (empty($title)) {
 	      </div>
 	</div>
 
-
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -271,6 +273,8 @@ if (empty($title)) {
 	    modal.find(".modal-body input[name='id']").val(id);
 	  	});
 	</script>
+
+	
 
 <?php
     include('layout/admin-footer.php');

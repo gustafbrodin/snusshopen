@@ -57,10 +57,11 @@ try {
 				<?php } ?> 
 			</tbody>
 		</table>
+    </div>
 	
 
 
 <?php
-include('../layout/footer.php');
+include('layout/admin-footer.php');
 ?>  
 

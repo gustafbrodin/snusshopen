@@ -18,11 +18,12 @@
 	<header>
         
       <nav class="navbar navbar-dark box-shadow" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); color: white;">
-      <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif; margin-left: 100px;">Snusshopen</h1>
+      
+        <div class="container-fluid">
+        <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif; margin-left: 100px;">Snusshopen</h1>
           <a href="index.php" class="navbar-brand d-flex align-items-center ml-5">
             <strong>Hem</strong>
           </a>
-        <div class="container d-flex justify-content-between">
           
           <?php 
           if (isset($_SESSION['email'])){  
