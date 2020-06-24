@@ -121,38 +121,38 @@
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputAddress">Adress</label>
-        <input type="text" class="form-control"  placeholder="Adress" name="street" value="<?=htmlentities($street)?>">
+        <input type="text" class="form-control"  placeholder="Adress" name="street" >
       </div>
       <div class="form-group col-md-6">
           <label for="inputZip">Postnummer</label>
-          <input type="text" class="form-control" name="postal_code" value="<?=htmlentities($postal_code)?>">
+          <input type="text" class="form-control" name="postal_code" >
         </div>
       <div class="form-group col-md-6">
         <label for="inputAddress">E-post</label>
-        <input type="email" class="form-control" name="email"  placeholder="E-post" value="<?=htmlentities($email)?>">
+        <input type="email" class="form-control" name="email"  placeholder="E-post" >
       </div> 
       <div class="form-group col-md-6">
       <label for="inputPassword4">Lösenord</label>
-      <input type="password" class="form-control" placeholder="Lösenord" name="password" value="<?=htmlentities($password)?>">
+      <input type="password" class="form-control" placeholder="Lösenord" name="password" >
       </div>
       <div class="form-group col-md-6">
       <label for="inputPassword4">Bekräfta Lösenord</label>
-      <input type="password" class="form-control" placeholder="Lösenord" name="confirmPassword" value="<?=htmlentities($password)?>">
+      <input type="password" class="form-control" placeholder="Lösenord" name="confirmPassword" >
       </div>
       </div>
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputPhone">Telefonnummer</label>
-        <input type="number" class="form-control telefonnummer" name="phone" placeholder="Telefonnummer" value="<?=htmlentities($phone)?>">
+        <input type="number" class="form-control telefonnummer" name="phone" placeholder="Telefonnummer" >
       </div>
         <div class="form-group col-md-3">
           <label for="inputCity">Stad</label>
-          <input type="text" class="form-control" name="city" value="<?=htmlentities($city)?>">
+          <input type="text" class="form-control" name="city" >
         </div>
         <div class="form-group col-md-3">
           <label for="inputState">Land</label>
-          <select  name="country" class="form-control" value="<?=htmlentities($country)?>">
-            <option selected>Välj</option>
+          <select  name="country" class="form-control" >
+            <option value="" selected>Välj</option>
             <option value="SE">Sverige</option>
           </select>
         </div>

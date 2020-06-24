@@ -4,15 +4,6 @@
 	require('../src/config.php');
     include('layout/header.php');
 
-
-    $pageTitle = "Logga in";
-    $pageId = "";
-
-    // echo "<pre>";
-    // print_r($_SESSION);
-    // echo "</pre>";
-
-
     $msg = "";
     if (isset($_GET['mustLogin'])) {
         $msg = '<div class="error_msg">Obs! Sidan är inloggningsskyddad. Var snäll och logga in.</div>';
@@ -74,6 +65,7 @@
     </label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" name="doLogin" type="submit">Logga in</button>
+  <a href="register.php" style="color: grey!important;">Inget konto? Registrera dig <u>här</u></a>
 </form>
 </div>
 

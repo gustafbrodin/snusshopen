@@ -160,7 +160,7 @@ try {
 <body>
 	<header>
       <nav class="navbar navbar-dark bg-primary box-shadow" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); color: white;">
-        <div class="container d-flex justify-content-between">
+        <div class="container-fluid d-flex justify-content-between" >
           <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif;">Snusshopen</h1>
           <a href="index.php" class="navbar-brand d-flex align-items-center ml-5">
             <strong>Hem</strong>
@@ -211,43 +211,43 @@ try {
         
 
     <form method="POST" action="#" class="container-fluid">
-    <div class="row d-flex justify-content-around">
+    <div class="row d-flex justify-content-center">
 
-            <div class="col-3 mt-5 form">
+            <div class="col-4 mt-5 form">
             
-            <h2 class="mb-4">Dina uppgifter</h2>
+            <h2 class="mb-4 mr-5">Dina uppgifter</h2>
             <?=$msg?>
             
-            <label class="form-group__label">Förnamn</label>
-            <input class="form-group__field" name="first_name" type="text" value="<?=htmlentities($user['first_name'])?>"><br>
+            <label class="form-group__label ">Förnamn</label>
+            <input class="form-group__field col-6" name="first_name" type="text" value="<?=htmlentities($user['first_name'])?>"><br>
             
-            <label class="form-group__label">Efternamn</label>
-            <input class="form-group__field" name="last_name" type="text" value="<?=htmlentities($user['last_name'])?>"><br>
+            <label class="form-group__label mt-2">Efternamn</label>
+            <input class="form-group__field mt-2 col-6" name="last_name" type="text" value="<?=htmlentities($user['last_name'])?>"><br>
             
-            <label class="form-group__label">E-mail</label>
-            <input class="form-group__field" name="email" type="text" value="<?=htmlentities($user['email'])?>"><br>
+            <label class="form-group__label mt-2">E-mail</label>
+            <input class="form-group__field mt-2 col-6" name="email" type="text" value="<?=htmlentities($user['email'])?>"><br>
             
-            <label class="form-group__label">Lösenord</label>
-            <input class="form-group__field" name="password" type="password"><br>
+            <label class="form-group__label mt-2">Lösenord</label>
+            <input class="form-group__field mt-2 col-6" name="password" type="password"><br>
             
-            <label class="form-group__label ">Telefon</label>
-            <input class="form-group__field telefonnummer" name="phone" type="number" value="<?=htmlentities($user['phone'])?>">
+            <label class="form-group__label  mt-2">Telefon</label>
+            <input class="form-group__field mt-2 col-6 telefonnummer" name="phone" type="number" value="<?=htmlentities($user['phone'])?>">
             </div>
             
-            <div class="col-3 mt-5 form ">
+            <div class="col-4 mt-5 form ml-5">
             <h2 class="mb-4">Leveransaddress</h2>
 
-            <label class="form-group__label">Gatuadress</label>
-            <input class="form-group__field" name="street" type="text" value="<?=htmlentities($user['street'])?>"><br>
+            <label class="form-group__label mt-2">Gatuadress</label>
+            <input class="form-group__field mt-2 col-6" name="street" type="text" value="<?=htmlentities($user['street'])?>"><br>
             
-            <label class="form-group__label">Postnummer</label>
-            <input class="form-group__field" name="postal_code" type="text" value="<?=htmlentities($user['postal_code'])?>"><br>
+            <label class="form-group__label mt-2">Postnummer</label>
+            <input class="form-group__field mt-2 col-6" name="postal_code" type="text" value="<?=htmlentities($user['postal_code'])?>"><br>
             
-            <label class="form-group__label">Stad</label>
-            <input class="form-group__field" name="city" type="text" value="<?=htmlentities($user['city'])?>"><br>
+            <label class="form-group__label mt-2">Stad</label>
+            <input class="form-group__field mt-2 col-6" name="city" type="text" value="<?=htmlentities($user['city'])?>"><br>
             
-            <label for="input1">Land:</label> 
-            <select  name="country" class="custom-select float-right col-7" value="<?=htmlentities($country)?>">
+            <label for="input1" class="mt-2">Land:</label> 
+            <select  name="country" class="custom-select float-right col-6 mt-2" value="<?=htmlentities($country)?>">
                 <option value="SE">Sverige</option>
             </select>
             </div>

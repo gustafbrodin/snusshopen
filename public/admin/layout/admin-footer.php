@@ -1,6 +1,6 @@
 <footer class="text-muted" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); height: 200px;">
-      <nav class="navbar navbar-dark box-shadow" style="color: white;">
-        <div class="container d-flex justify-content-between pt-4">
+      <nav class="navbar navbar-dark box-shadow pb-0" style="color: white;">
+        <div class="container d-flex justify-content-between pt-3">
           <div>
             <p><a href="index.php">Admin</a></p>
             <p><a href="products.php" >Hantera Produkter</a></p>
