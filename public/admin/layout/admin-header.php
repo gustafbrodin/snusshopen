@@ -17,8 +17,8 @@
 	
 
 	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); color: white;">
-  <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif;">Snusshopen</h1>
-  <div class="collapse navbar-collapse offset-3" id="navbarNav">
+  <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif; margin-left:100px;">Snusshopen</h1>
+  <div class="collapse navbar-collapse offset-2 pl-5" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link text-white" href="index.php">Hem <span class="sr-only">(current)</span></a>

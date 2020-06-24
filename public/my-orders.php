@@ -57,7 +57,7 @@
 
 	<header>
       <nav class="navbar navbar-dark bg-primary box-shadow" style="background: linear-gradient(135deg,#1e5799,#035b79 0,#498ca3); color: white;">
-        <div class="container d-flex justify-content-between">
+        <div class="container-fluid d-flex justify-content-between" style="margin-left:100px;">
           <h1 class="text-center text-white" style="font-family: 'Dosis', sans-serif;">Snusshopen</h1>
           <a href="index.php" class="navbar-brand d-flex align-items-center ml-5">
             <strong>Hem</strong>

@@ -139,7 +139,7 @@ if (empty($title)) {
 							throw new \PDOException($e->getMessage(), (int) $e->getCode()); 
 					}
 					if ($result) {
-					$msg = '<div class="alert alert-success">Your blog post has been updated
+					$msg = '<div class="alert alert-success">Produkten har uppdaterats
 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
@@ -178,12 +178,12 @@ if (empty($title)) {
 						<?=$msg?>
 				</div>
 				</div>
-				</div>
+
 
 <div class="row">
 		<?php foreach ($products as $key => $product) { ?>
-				<div class="col-md-3">
-						<div class=" mb-4 ">
+				<div class="col-md-3 p-0">
+						<div class=" mb-4">
 								<img class="card-img-top ml-5" src="../img/<?=htmlentities($product['img_url'])?>" style="width: 100px; height: 100px;">
 								<div class="card-body">
 										<h6 class="card-title"><?=htmlentities($product['title'])?></h6>
@@ -204,6 +204,7 @@ if (empty($title)) {
 						</div>
 				</div>
 		<?php } ?>
+</div>
 </div>
 
 
