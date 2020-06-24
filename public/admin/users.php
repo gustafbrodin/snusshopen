@@ -34,8 +34,7 @@
 ?>
 
     <div id="content">
-        <article class="border">
-            <h1>Hantera användare</h1>
+        <article>
 
             <form action="new-user.php" method="GET">
             	<input type="submit" value="Ny användare" class="btn btn-sm btn-success">
@@ -62,16 +61,16 @@
             	<?php foreach ($users as $key => $user) { ?>
             	
             		<tr>
-	            		<th><?=$user['id']?></th>
-	            		<th><?=htmlentities($user['first_name'])?></th>
-						<th><?=htmlentities($user['last_name'])?></th>
-	            		<th><?=htmlentities($user['email'])?></th>
-                        <th><?=htmlentities($user['phone'])?></th>
-                        <th><?=htmlentities($user['street'])?></th>
-                        <th><?=htmlentities($user['postal_code'])?></th>
-                        <th><?=htmlentities($user['city'])?></th>
-                        <th><?=htmlentities($user['country'])?></th>
-	            		<th>	            			
+	            		<td><?=$user['id']?></td>
+	            		<td><?=htmlentities($user['first_name'])?></td>
+						<td><?=htmlentities($user['last_name'])?></td>
+	            		<td><?=htmlentities($user['email'])?></td>
+                        <td><?=htmlentities($user['phone'])?></td>
+                        <td><?=htmlentities($user['street'])?></td>
+                        <td><?=htmlentities($user['postal_code'])?></td>
+                        <td><?=htmlentities($user['city'])?></td>
+                        <td><?=htmlentities($user['country'])?></td>
+	            		<td>	            			
 	            			<form action="update-user.php?" method="GET" style="float:left;">
 	            				<input type="hidden" name="id" value="<?=$user['id']?>">
 				            	<input type="submit" value="Updatera" class="btn btn-sm btn-warning mr-1">
@@ -81,7 +80,7 @@
 	            				<input type="hidden" name="id" value="<?=$user['id']?>">
 	            				<input type="submit" name="deleteUserBtn" value="Radera" class="btn btn-sm btn-danger">
 	            			</form>
-	            		</th>
+	            		</td>
 	            	</tr>
 
 	            <?php } ?>

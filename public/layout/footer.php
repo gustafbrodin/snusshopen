@@ -33,6 +33,19 @@
       $(this).parent().submit();
     });
 
+    let checkbox = document.getElementById('checkbox');
+    let billing = document.getElementById('billing');
+    function myFunction() {
+    if (checkbox.checked == true){
+    billing.style.display = "block";
+  } else {
+     billing.style.display = "none";
+  }
+};
+
+console.log(checkbox);
+console.log(billing);
+
   </script>
   
 </body>
