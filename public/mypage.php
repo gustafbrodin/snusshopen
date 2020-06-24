@@ -254,8 +254,8 @@ try {
             </div>
             </div>
             <div class="d-flex justify-content-center p-5">
-                <input class="btn btn-primary m-2" type="submit" name="update" value="Uppdatera">
-                <input class="btn btn-primary m-2" type="submit" name="deleteBtn" value="Delete">
+                <input class="btn btn-warning m-2" type="submit" name="update" value="Uppdatera">
+                <input class="btn btn-danger m-2" type="submit" name="deleteBtn" value="Delete">
             </div>
 
     </form>
