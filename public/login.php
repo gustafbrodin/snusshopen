@@ -53,20 +53,27 @@
         }
     }
 ?>
+
+
+
+
 <div class="d-flex justify-content-center m-3">
-<form class="form-signin">
+<form class="form-signin" method="POST" action="#">
+
+<?=$msg?>
+
   <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal">Logga in</h1>
   <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Lösenord</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+  <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address">
+  <label for="inputPassword" name="password" class="sr-only">Lösenord</label>
+  <input type="password" id="password" name="password" class="form-control" placeholder="Password">
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Kom ihåg mig
     </label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Logga in</button>
+  <button class="btn btn-lg btn-primary btn-block" name="doLogin" type="submit">Logga in</button>
 </form>
 </div>
 

@@ -70,9 +70,9 @@ unset($_SESSION['cartItems']);
         </nav>
     </header>
     <br>
-    <h1>Tack för din order!</h1>
+    <h1 style="text-align:center;">Tack för din order!</h1>
     <br>
-    <p>Vi har mottagit din order och kommer behandla detta så fort som möjligt. Du kommer få orderbekräftelse via e-post. Vid frågor kontakta gärna vår support! </p>
+    <p style="text-align:center;"> Vi har mottagit din order och kommer behandla detta så fort som möjligt. Du kommer få orderbekräftelse via e-post. Vid frågor kontakta gärna vår support! </p>
 
 	<div class="px-5">
 		<table class="table table-borderless">

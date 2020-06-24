@@ -9,11 +9,6 @@
     $pageId = "";
 
 
-    // // echo $_POST
-    // echo "<pre>";
-    // echo print_r($_POST);
-    // echo "</pre>";
-
     $first_name      = '';
     $last_name       = '';
     $email           = '';

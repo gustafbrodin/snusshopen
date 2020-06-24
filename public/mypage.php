@@ -246,8 +246,10 @@ try {
             <label class="form-group__label">Stad</label>
             <input class="form-group__field" name="city" type="text" value="<?=htmlentities($user['city'])?>"><br>
             
-            <label class="form-group__label">Land</label>
-            <input class="form-group__field" name="country" type="text" value="<?=htmlentities($user['country'])?>">
+            <label for="input1">Land:</label> 
+            <select  name="country" class="custom-select float-right col-7" value="<?=htmlentities($country)?>">
+                <option value="SE">Sverige</option>
+            </select>
             </div>
             </div>
             </div>

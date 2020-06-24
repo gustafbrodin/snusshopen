@@ -11,6 +11,69 @@ if (empty($_SESSION['cartItems'])) {
   header('Location: index.php');
   exit;
 }
+
+$first_name      = '';
+$last_name       = '';
+$email           = '';
+$phone           = '';
+$street          = '';
+$postal_code     = '';
+$city            = '';
+$country         = '';
+$error           = '';
+$msg             = '';
+if (isset($_POST['register'])) {
+    $first_name        = trim($_POST['first_name']);
+    $last_name         = trim($_POST['last_name']);
+    $email             = trim($_POST['email']);
+    $password          = trim($_POST['password']);
+    $confirmPassword   = trim($_POST['confirmPassword']);
+    $phone             = trim($_POST['phone']);
+    $street            = trim($_POST['street']);
+    $postal_code       = trim($_POST['postal_code']);
+    $city              = trim($_POST['city']);
+    $country           = trim($_POST['country']);
+
+    if (empty($first_name)) {
+        $error .= "<li>förnamnet är obligatoriskt</li>";
+    }
+    if (empty($last_name)) {
+        $error .= "<li>efternamnet är obligatoriskt</li>";
+    }
+    if (empty($email)) {
+        $error .= "<li>E-post är obligatoriskt</li>";
+    }
+    if (empty($phone)) {
+        $error .= "<li>Telefonnummer är obligatoriskt</li>";
+    }
+    if (empty($street)) {
+        $error .= "<li>Adress är obligatoriskt</li>";
+    }
+    if (empty($postal_code)) {
+        $error .= "<li>Postkod är obligatoriskt</li>";
+    }
+    if (empty($city)) {
+        $error .= "<li>Stad är obligatoriskt</li>";
+    }
+    if (empty($country)) {
+        $error .= "<li>Land är obligatoriskt</li>";
+    }
+    if (!empty($password) && strlen($password) < 6) {
+        $error .= "<li>Lösenordet får inte vara mindre än 6 tecken lång</li>";
+    }
+    if ($confirmPassword !== $password) {
+        $error .= "<li>Det bekräftade lösenordet matchar inte</li>";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error .= "<li>Ogiltig e-post</li>";
+    }
+    
+
+    if ($error) {
+        $msg = "<ul class='error_msg'>{$error}</ul>";
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -110,67 +173,184 @@ if (empty($_SESSION['cartItems'])) {
         </tr>
 			</tbody>
 		</table>
-	
 
+  <?php if (isset($_SESSION['email'])){ ?>      
 	<div> 
     <form action="create-order.php" method="POST">
+    <?=$msg?>
       <input type="hidden" name="totalPrice" value="<?=$cartTotalSum?>">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="inputEmail4">Förnamn</label>
-          <input type="text" class="form-control" name="firstName" placeholder="Förnamn">
+          <input type="text" class="form-control" name="firstName" value="<?=htmlentities($user['first_name'])?>" placeholder="Förnamn" required>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Efternamn</label>
-          <input type="text" class="form-control" name="lastName" placeholder="Efternamn">
+          <input type="text" class="form-control" name="lastName" value="<?=htmlentities($user['last_name'])?>" placeholder="Efternamn" required>
         </div>
       </div>
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputAddress">Adress</label>
-        <input type="text" class="form-control"  placeholder="Adress" name="street">
+        <input type="text" class="form-control" value="<?=htmlentities($user['street'])?>" placeholder="Adress" name="street" required>
       </div>
       <div class="form-group col-md-6">
           <label for="inputZip">Postnummer</label>
-          <input type="text" class="form-control" name="postalCode">
+          <input type="text" class="form-control" value="<?=htmlentities($user['postal_code'])?>" name="postalCode" required>
         </div>
       <div class="form-group col-md-6">
         <label for="inputAddress">E-post</label>
-        <input type="email" class="form-control" name="email"  placeholder="E-post">
+        <input type="email" class="form-control" name="email" value="<?=htmlentities($user['email'])?>" placeholder="E-post" required>
       </div> 
       <div class="form-group col-md-6">
       <label for="inputPassword4">Lösenord</label>
-      <input type="password" class="form-control" placeholder="Lösenord" name="password">
+      <input type="password" class="form-control" placeholder="Lösenord" name="password" value="<?=htmlentities($user['password'])?>" required>
       </div>
       </div>
       <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputPhone">Telefonnummer</label>
-        <input type="number" class="form-control" name="phone" placeholder="Telefonnummer">
+        <input type="number" class="form-control" name="phone" value="<?=htmlentities($user['phone'])?>" placeholder="Telefonnummer" required>
       </div>
         <div class="form-group col-md-3">
           <label for="inputCity">Stad</label>
-          <input type="text" class="form-control" name="city" >
+          <input type="text" class="form-control" value="<?=htmlentities($user['city'])?>" name="city" required >
         </div>
         <div class="form-group col-md-3">
           <label for="inputState">Land</label>
-          <select  name="country" class="form-control">
-            <option selected>Välj</option>
+          <select  name="country" class="form-control" value="<?=htmlentities($country)?>" required>
+            
             <option value="SE">Sverige</option>
           </select>
         </div>
       </div>
       <div class="form-group">
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <input class="form-check-input" type="checkbox" id="gridCheck" required>
           <label class="form-check-label" for="gridCheck">
             Jag har läst och godkänner villkoren
           </label>
         </div>
       </div>
+
+<?php } else { ?>
+
+  
+	<div> 
+    <form action="create-order.php" method="POST">
+    <?=$msg?>
+      <input type="hidden" name="totalPrice" value="<?=$cartTotalSum?>">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Förnamn</label>
+          <input type="text" class="form-control" name="firstName" placeholder="Förnamn" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Efternamn</label>
+          <input type="text" class="form-control" name="lastName" placeholder="Efternamn" required>
+        </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Adress</label>
+        <input type="text" class="form-control"  placeholder="Adress" name="street" required>
+      </div>
+      <div class="form-group col-md-6">
+          <label for="inputZip">Postnummer</label>
+          <input type="text" class="form-control" name="postalCode" required>
+        </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">E-post</label>
+        <input type="email" class="form-control" name="email"  placeholder="E-post" required>
+      </div> 
+      <div class="form-group col-md-6">
+      <label for="inputPassword4">Lösenord</label>
+      <input type="password" class="form-control" placeholder="Lösenord" name="password" required>
+      </div>
+      </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPhone">Telefonnummer</label>
+        <input type="number" class="form-control" name="phone" placeholder="Telefonnummer" required>
+      </div>
+        <div class="form-group col-md-3">
+          <label for="inputCity">Stad</label>
+          <input type="text" class="form-control" name="city" required>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="inputState">Land</label>
+          <select name="country" class="form-control" required>
+            <option selected value="">Välj</option>
+            <option value="SE">Sverige</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck"  required>
+          <label class="form-check-label" for="gridCheck">
+            Jag har läst och godkänner villkoren
+          </label>
+        </div>
+      </div>
+      <?php } ?>
+      
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" name="billingAdress" type="checkbox" id="checkbox" onclick="myFunction()">
+          <label class="form-check-label" for="checkbox">
+            Jag har en annan fakturaadress
+          </label>
+        </div>
+      </div>
+
+      
+        <div id="billing" style="display:none"> 
+        
+        
+          <input type="hidden" name="totalPrice" value="<?=$cartTotalSum?>">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Förnamn</label>
+              <input type="text" class="form-control" name="billingFirstName" placeholder="Förnamn" >
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Efternamn</label>
+              <input type="text" class="form-control" name="billingLastName" placeholder="Efternamn" >
+            </div>
+          </div>
+          <div class="form-row">
+          <div class="form-group col-md-6"></div>
+            <label for="inputAddress">Adress</label>
+            <input type="text" class="form-control"  placeholder="Adress" name="billingStreet" >
+          </div>
+          <div class="form-group col-md-6">
+              <label for="inputZip">Postnummer</label>
+              <input type="text" class="form-control" name="billingPostalCode" >
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="inputCity">Stad</label>
+              <input type="text" class="form-control" name="billingCity" >
+            </div>
+            <div class="form-group col-md-3">
+              <label for="inputState">Land</label>
+              <select name="billingCountry" class="form-control" >
+                <option selected value="">Välj</option>
+                <option value="SE">Sverige</option>
+              </select>
+            </div>
+          </div>
+          
+	      </div>
+      </div>
+      
+      
+
       <button type="submit" class="btn btn-primary" name="createOrderBtn">Genomför köp</button>
     </form>
 	</div>
+  
 </div>
 
 

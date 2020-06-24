@@ -168,9 +168,8 @@ if (empty($title)) {
 		   			
 				    <textarea class="form-control" cols="30" rows="5" name="description" placeholder="Beskrivning av produkten"></textarea><br>
 				    <div class="form-group inline-block">
-									<input type="text" class="form-control col-md-2" style="display: inline-block;" name="price" placeholder="Pris" >
+									<input type="number" class="form-control col-md-2" style="display: inline-block;" name="price" placeholder="Pris" >
 									 <input type="text" class="form-control col-md-9" style="display: inline-block;" name="img_url" placeholder="Bild-URL"> 
-									<!-- <input type="file" class="form-control col-md-9" style="display: inline-block;" name="img_url" placeholder="Bild-URL"> -->
 				    </div>
 				    <div class="form-group mb-4">
 			          <input type="submit" class="btn btn-sm btn-success" name="upload" id="submit" value="Lägg till ny produkt">
@@ -233,7 +232,7 @@ if (empty($title)) {
 	                  <textarea class="form-control" name="description" id="updatePost"></textarea>
 	                  <div class="form-group">
 	              	    <label for="updatePrice" class="col-form-label">Price: </label>
-	                    <input type="text" class="form-control" name="price" id="updatePrice">
+	                    <input type="number" class="form-control" name="price" id="updatePrice">
 	                    
 					  </div>
 					  <div class="form-group">

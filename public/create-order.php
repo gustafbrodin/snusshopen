@@ -67,11 +67,34 @@ if (isset($_POST['createOrderBtn'])) {
                 }
     }
 
-    echo "<pre>";
-    print_r($user);
-    echo "</pre>";
 
-   
+
+    if (isset($_POST['billingAdress'])) { 
+        $billingFirstName        = trim($_POST['billingFirstName']);
+        $billingLastName         = trim($_POST['billingLastName']);
+        $billingStreet           = trim($_POST['billingStreet']);
+        $billingPostalCode       = trim($_POST['billingPostalCode']);
+        $billingCity              = trim($_POST['billingCity']);
+        $billingCountry           = trim($_POST['billingCountry']);
+
+        try {
+                $query = "INSERT INTO orders (user_id, total_price, billing_full_name, billing_street, billing_postal_code, billing_city, billing_country)
+                VALUES (:userId, :totalPrice, :billingFullName, :billingStreet, :billingPostalCode, :billingCity, :billingCountry);";
+                $stmt = $dbconnect->prepare($query);
+                $stmt->bindValue(':userId', $userId);
+                $stmt->bindValue(':totalPrice', $totalPrice);
+                $stmt->bindValue(':billingFullName', "{$billingFirstName} {$billingLastName}");
+                $stmt->bindValue(':billingStreet', $billingStreet);
+                $stmt->bindValue(':billingPostalCode', $billingPostalCode);
+                $stmt->bindValue(':billingCity', $billingCity);
+                $stmt->bindValue(':billingCountry', $billingCountry);
+                $stmt->execute();
+                $orderId = $dbconnect->lastInsertId();
+        }       catch (\PDOException $e) {
+                throw new \PDOException($e->getMessage(), (int) $e->getCode());
+                }
+
+    } else {
     
     try {
                 $query = "INSERT INTO orders (user_id, total_price, billing_full_name, billing_street, billing_postal_code, billing_city, billing_country)
@@ -89,6 +112,7 @@ if (isset($_POST['createOrderBtn'])) {
         }       catch (\PDOException $e) {
                 throw new \PDOException($e->getMessage(), (int) $e->getCode());
                 }
+    }
 
     foreach ($_SESSION['cartItems'] as $cartId => $cartItem) {
         try {
